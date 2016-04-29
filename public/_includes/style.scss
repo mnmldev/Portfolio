@@ -1,4 +1,7 @@
-$font-stack: Arial;
+// Google fonts
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
+
+$font-stack: "Source Code Pro", sans-serif;
 $background-color: #37474f;
 
 body {
