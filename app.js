@@ -5,7 +5,7 @@ var app = express();
 app.use(
      sassMiddleware({
          src: __dirname + '/sass', //where the sass files are
-         dest: __dirname + '/public', //where css should go
+         dest: __dirname + '/public/css', //where css should go
          debug: true // obvious
       })
 );
