@@ -1,7 +1,14 @@
 var express = require('express');
+var sassMiddleware = require('node-sass-middleware');
 var app = express();
-var server = require('http').createServer(app);
-var io = require('socket.io')(server);
+
+app.use(
+     sassMiddleware({
+         src: __dirname + '/sass', //where the sass files are
+         dest: __dirname + '/public/css', //where css should go
+         debug: true // obvious
+      })
+);
 
 app.use(express.static(__dirname + '/public'));
 
