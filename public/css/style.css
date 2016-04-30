@@ -3,4 +3,12 @@ body {
   font-family: "Source Code Pro", sans-serif;
   background: #37474f; }
 
+nav {
+  color: #E91E63;
+}
+
+nav ul li {
+  display: inline;
+}
+
 /*# sourceMappingURL=style.css.map */
