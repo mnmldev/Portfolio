@@ -4,6 +4,8 @@ body {
   background: #37474f; }
 
 nav {
+  font-size: 20px;
+  line-height: 20px;
   color: #E91E63;
 }
 
