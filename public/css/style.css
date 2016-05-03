@@ -20,4 +20,19 @@ nav ul {
 nav ul li {
   display: inline;
 }
+
+div.welcome{
+  background-color: #81C784;
+  background-image: url('../img/welcome2.svg');
+  background-size: contain;
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+}
+
+img.welcome-size{
+  visibility: hidden;
+  width: 100%;
+  height: auto;
+}
 /*# sourceMappingURL=style.css.map */

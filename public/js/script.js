@@ -57,7 +57,6 @@ function resetSelected () {
   var id = $('.current').attr('id');
 
   if (id == 'home') {
-    console.log(id);
     $('#home').html('Home');
     $('#home').removeClass('current');
   } else if (id == 'portfolio') {
