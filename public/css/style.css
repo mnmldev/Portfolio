@@ -19,6 +19,7 @@ nav ul {
 
 nav ul li {
   display: inline;
+  cursor: pointer;
 }
 
 div.welcome{
