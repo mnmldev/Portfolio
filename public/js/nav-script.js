@@ -19,11 +19,6 @@ $(document).ready(function() {
     resetSelected();
     $('#contact').addClass('current');
   });
-  $('#contact').hover(function(){
-    $(this).html('&lt;Contact&gt;');
-    }, function(){
-    $(this).html('Contact');
-  });
   hoverNav('#contact','Contact');
   $('.home').on('click', function () {
     home();
