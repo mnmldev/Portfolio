@@ -84,4 +84,22 @@ div.overlay p#second {
   top:65px;
   left: 15px;
 }
+
+form.console-form {
+  bottom: 10px;
+  left: 15px;
+  position: absolute;
+  color: rgb(0,255,0);
+}
+
+form.console-form input{
+  border: none;
+  background-color: rgba(55, 71, 79, 0.1);;
+  color: rgb(0,255,0);
+  font-size: 15px;
+}
+
+form.console-form input:focus {
+  outline: none;
+}
 /*# sourceMappingURL=style.css.map */

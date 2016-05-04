@@ -1,6 +1,6 @@
 $(document).ready(function() {
+  var viewport = $(window).height();
   $('#portfolio').on('click', function() {
-    $('header').show();
     portfolio();
     $('#portfolio').html('&lt;Portfolio&gt;');
     resetSelected();
@@ -21,15 +21,19 @@ $(document).ready(function() {
     $('#contact').addClass('current');
   });
   hoverNav('#contact','Contact');
-  $('.home').on('click', function () {
+  $('.home').on('click', function (e) {
+    e.preventDefault();
     home();
     $('#home').html('&lt;Home&gt;');
     resetSelected();
     $('#home').addClass('current');
+    $("body, html").animate({
+            scrollTop: viewport+ 90
+        }, 400);
   });
   hoverNav('#home.home','Home');
-  scrollViewport();
-
+  scrollViewport(viewport);
+  //getNav();
 });
 
 function portfolio () {
@@ -89,17 +93,20 @@ function hoverNav(selector, pageName) {
     });
   }
 }
-function scrollViewport() {
+function scrollViewport(viewport) {
   if ($('.current').hasClass('home')) {
-    var viewport = $(window).height();
     window.addEventListener("scroll",function() {
     if(window.scrollY > viewport + 30) {
-    $('header').show().slideDown('slow');
-    } else {
+    $('header').slideDown();
+  } else if ($('.current').hasClass('home')) {
     $('header').slideUp();
     }
     },false);
-  } else {
-    $('header').show();
+  }
+}
+function getNav() {
+  if (!($('.current').hasClass('home'))) {
+    console.log('hello');
+    $('header').css('display', 'block');
   }
 }
