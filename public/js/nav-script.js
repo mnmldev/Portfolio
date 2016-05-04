@@ -1,5 +1,6 @@
 $(document).ready(function() {
   $('#portfolio').on('click', function() {
+    $('header').show();
     portfolio();
     $('#portfolio').html('&lt;Portfolio&gt;');
     resetSelected();
@@ -26,7 +27,9 @@ $(document).ready(function() {
     resetSelected();
     $('#home').addClass('current');
   });
-  hoverNav('#home','Home');
+  hoverNav('#home.home','Home');
+  scrollViewport();
+
 });
 
 function portfolio () {
@@ -78,9 +81,25 @@ function resetSelected () {
 function hoverNav(selector, pageName) {
   if (!($(selector).hasClass('current'))) {
     $(selector).hover(function(){
-      $(this).html('&lt;' + pageName +'&gt;');
-      }, function(){
-        $(this).html(pageName);
+      $(selector).html('&lt;' + pageName +'&gt;');
+    }, function(){
+        if (!($(selector).hasClass('current'))) {
+          $(selector).html(pageName);
+        }
     });
+  }
+}
+function scrollViewport() {
+  if ($('.current').hasClass('home')) {
+    var viewport = $(window).height();
+    window.addEventListener("scroll",function() {
+    if(window.scrollY > viewport + 30) {
+    $('header').show().slideDown('slow');
+    } else {
+    $('header').slideUp();
+    }
+    },false);
+  } else {
+    $('header').show();
   }
 }

@@ -1,8 +1,12 @@
 $(document).ready(function () {
   $('.console-container').hide();
-  $('.welcome').hover(function () {
+  $('.welcome').one('mouseover', function () {
+    $('.hidden').hide();
     $('.console-container').delay(500).show('slow', function () {
-      $('.overlay p').append(' hello');
+      $('#zero').append(' hello');
+      $('#first').delay(250).show('fast', function () {
+        $('#second').delay(250).show('fast');
+      });
     });
   });
 });

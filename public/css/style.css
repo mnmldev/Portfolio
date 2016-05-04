@@ -1,13 +1,22 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
 body {
   font-family: "Source Code Pro", sans-serif;
-  background: #37474f; }
+  background: #37474f;
+  position: relative;
+}
 
+header{
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  background: #37474f;
+  display: none;
+  width: 100%;
+}
 nav {
   font-size: 20px;
   line-height: 20px;
   color: #E91E63;
-
 }
 
 nav ul {
@@ -43,7 +52,7 @@ div.skills {
   height: 100vh;
 }
 
-.welcome div.console-container div.overlay {
+div.console-container div.overlay {
   position: relative;
 }
 
@@ -58,8 +67,21 @@ div.console-container {
 div.overlay p {
   position: absolute;
   z-index: 100%;
-  top:25px;
-  left: 20px;
   color: rgb(0,255,0);
+}
+
+div.overlay p#zero {
+  top:25px;
+  left: 15px;
+}
+
+div.overlay p#first {
+  top:45px;
+  left: 15px;
+}
+
+div.overlay p#second {
+  top:65px;
+  left: 15px;
 }
 /*# sourceMappingURL=style.css.map */
