@@ -25,15 +25,19 @@ $(document).ready(function() {
     e.preventDefault();
     home();
     $('#home').html('&lt;Home&gt;');
-    resetSelected();
+    if (!($('.home').hasClass('current'))) {
+      resetSelected();
+    }
     $('#home').addClass('current');
     $("body, html").animate({
             scrollTop: viewport+ 90
         }, 400);
   });
-  hoverNav('#home.home','Home');
+  hoverNav('#home','Home');
   scrollViewport(viewport);
-  //getNav();
+  getNav();
+
+  preventSubmit();
 });
 
 function portfolio () {
@@ -96,7 +100,7 @@ function hoverNav(selector, pageName) {
 function scrollViewport(viewport) {
   if ($('.current').hasClass('home')) {
     window.addEventListener("scroll",function() {
-    if(window.scrollY > viewport + 30) {
+    if(window.scrollY > viewport) {
     $('header').slideDown();
   } else if ($('.current').hasClass('home')) {
     $('header').slideUp();
@@ -109,4 +113,17 @@ function getNav() {
     console.log('hello');
     $('header').css('display', 'block');
   }
+}
+function preventSubmit() {
+  $('.console-submit').on('submit', function(e) {
+    validateForm(e);
+  return false;
+});
+}
+
+function validateForm(e) {
+    if (e.preventDefault) {
+       e.preventDefault();
+    }
+    e.returnValue = false; // for IE
 }
